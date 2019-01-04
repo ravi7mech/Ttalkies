@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'styles-variables.scss';
+@import 'styles-app-loading.scss';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~bootstrap/scss/bootstrap-reboot';
+@import '~bootstrap/scss/bootstrap-grid';
+
+button:focus {
+    outline: 1px dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+}

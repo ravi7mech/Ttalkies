@@ -133,6 +133,41 @@
           }
         }
       }
+    },
+    "tmdbapi": {
+      "root": "projects/tmdbapi",
+      "sourceRoot": "projects/tmdbapi/src",
+      "projectType": "library",
+      "prefix": "tmdb",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/tmdbapi/tsconfig.lib.json",
+            "project": "projects/tmdbapi/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/tmdbapi/src/test.ts",
+            "tsConfig": "projects/tmdbapi/tsconfig.spec.json",
+            "karmaConfig": "projects/tmdbapi/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/tmdbapi/tsconfig.lib.json",
+              "projects/tmdbapi/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "touring-talkies-app"
